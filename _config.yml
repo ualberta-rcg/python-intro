@@ -25,6 +25,8 @@ kind: "lesson"
 # Please don't change it: <USERNAME>/<PROJECT> is correct.
 repository: <USERNAME>/<PROJECT>
 
+github: [metadata]
+
 # Email address, no mailto:
 email: "team@carpentries.org"
 
@@ -85,6 +87,7 @@ exclude:
   - Makefile
   - bin/
   - .Rproj.user/
+  - vendor/bundle
 
 # Turn on built-in syntax highlighting.
 highlighter: rouge
