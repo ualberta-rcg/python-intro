@@ -1,5 +1,5 @@
 ---
-title: "Lists"
+title: "Lists & Dictionaries"
 teaching: 10
 exercises: 10
 questions:
@@ -18,6 +18,7 @@ keypoints:
 - "Character strings can be indexed like lists."
 - "Character strings are immutable."
 - "Indexing beyond the end of the collection is an error."
+- "A dictionary (dict) is a key value store"
 ---
 ## A list stores many values in a single structure.
 
@@ -426,3 +427,131 @@ IndexError: string index out of range
 > > from the list `old`; `new` and `old` are different objects.
 > {: .solution}
 {: .challenge}
+
+## Dictionaries let you set up a key/value store
+* Arrays are accessed as sequences with keys that are integers,
+  e.g. `my_array[13]`.
+* Dictionaries allow you to access items with more arbitrary keys,
+  usually strings, e.g. `my_dictionary['kittens']`.
+
+The two main ways of creating a dict, one uses braces and colons,
+the other uses keyword arguments to the dict built-in function:
+
+~~~
+# This is one way:
+
+dict1 = {'foo': 'bar', 'kittens': 5}
+
+dict1
+~~~
+{: .language-python}
+~~~
+{'foo': 'bar', 'kittens': 5}
+~~~
+{: .output}
+
+~~~
+# This does the same thing:
+
+dict2 = dict(foo='bar', kittens=5)
+
+dict2
+~~~
+{: .language-python}
+~~~
+{'foo': 'bar', 'kittens': 5}
+~~~
+{: .output}
+
+Accessing dicts is now done through the string keys:
+
+~~~
+dict1['foo']
+~~~
+{: .language-python}
+~~~
+'bar'
+~~~
+{: .output}
+
+We can easily add items to our dictionary after-the-fact:
+~~~
+dict1['fruits'] = ['bananas', 'apples']
+
+dict1
+~~~
+{: .language-python}
+~~~
+{'fruits': ['bananas', 'apples'], 'foo': 'bar', 'kittens': 5}
+~~~
+{: .output}
+
+We added a value to the dictionary that is a list. The combination of
+lists and dictionaries is a powerful way of describing data:
+
+~~~
+data = {
+     'servers': [
+         dict(name='Beluga',
+              location='Montreal',
+              cores_per_node=40),
+         dict(name='Cedar',
+              location='Burnaby',
+              cores_per_node=32)
+     ],
+     'sandwiches': ['Ham', 'Po boy', 'PB & J', 'Bánh Mì']
+}
+
+data
+~~~
+{: .language-python}
+~~~
+{'sandwiches': ['Ham', 'Po boy', 'PB & J', 'B\xc3\xa1nh M\xc3\xac'], 'servers': [{'cores_per_node': 40, 'location': 'Montreal', 'name': 'Beluga'}, {'cores_per_node': 32, 'location': 'Burnaby', 'name': 'Cedar'}]}
+~~~
+{: .output}
+
+We can now traverse this datastructure to access individual pieces of data,
+e.g.,
+
+~~~
+data['servers'][1]['name']
+~~~
+{: .language-python}
+~~~
+'Cedar'
+~~~
+{: .output}
+
+~~~
+data['sandwiches'][2]
+~~~
+{: .language-python}
+~~~
+'PB & J'
+~~~
+{: .output}
+
+The `keys` method gives us a list of the dictionary's keys:
+
+~~~
+data.keys()
+~~~
+{: .language-python}
+~~~
+['sandwiches', 'servers']
+~~~
+{: .output}
+
+Trying to access a key that doesn't exist throws an error:
+
+~~~
+data['shirts']
+~~~
+{: .language-python}
+~~~
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'shirts'
+~~~
+{: .error}
+
