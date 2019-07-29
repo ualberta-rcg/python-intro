@@ -542,6 +542,17 @@ data.keys()
 ~~~
 {: .output}
 
+The `values` method gives us a list of the dictionary's values:
+
+~~~
+data.values()
+~~~
+{: .language-python}
+~~~
+[['Ham', 'Po boy', 'PB & J', 'B\xc3\xa1nh M\xc3\xac'], [{'cores_per_node': 40, 'location': 'Montreal', 'name': 'Beluga'}, {'cores_per_node': 32, 'location': 'Burnaby', 'name': 'Cedar'}]]
+~~~
+{: .output}
+
 Trying to access a key that doesn't exist throws an error:
 
 ~~~
@@ -555,3 +566,21 @@ KeyError: 'shirts'
 ~~~
 {: .error}
 
+We can test if a key exists though without causing an error:
+
+~~~
+'shirts' in data
+~~~
+{: .language-python}
+~~~
+False
+~~~
+{: .output}
+~~~
+'sandwiches' in data
+~~~
+{: .language-python}
+~~~
+True
+~~~
+{: .output}

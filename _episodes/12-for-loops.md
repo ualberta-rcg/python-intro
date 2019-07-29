@@ -399,3 +399,25 @@ print(total)
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
+
+Looping over a dictionary is essentially looping over the keys:
+
+~~~
+pets = {'cat': 'Whiskers', 'dog': 'Rover', 'bird': 'Tweetie'}
+
+for pet in pets:
+    print(pet)
+    print(pets[pet])
+~~~
+{: .language-python}
+~~~
+bird
+Tweetie
+dog
+Rover
+cat
+Whiskers
+~~~
+{: .output}
+
+Note that the order of the output isn't guaranteed!
