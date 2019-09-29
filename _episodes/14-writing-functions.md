@@ -14,6 +14,20 @@ keypoints:
 - "Arguments in call are matched to parameters in definition."
 - "Functions may return a result to their caller using `return`."
 ---
+
+If you are using Google Colab, we will want to grab some data files from the internet.
+
+~~~
+!mkdir -p data
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_africa.csv
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_americas.csv
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_oceania.csv
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_europe.csv
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_asia.csv
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_all.csv
+~~~
+{: .language-python}
+
 ## Break programs down into functions to make them easier to understand.
 
 *   Human beings can only keep a few items in working memory at a time.
