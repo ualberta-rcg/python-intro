@@ -32,8 +32,8 @@ If you are using Google Colab, we will want to grab some data files from the int
 
 ~~~
 !mkdir -p data
-!wget -P data https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_oceania.csv
-!wget -P data https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_americas.csv
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_oceania.csv
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_americas.csv
 ~~~
 {: .language-python}
 

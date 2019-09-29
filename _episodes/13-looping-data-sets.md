@@ -14,6 +14,20 @@ keypoints:
 - "Use `glob` and `for` to process batches of files."
 ---
 
+
+If you are using Google Colab, we will want to grab some data files from the internet.
+
+~~~
+!mkdir -p data
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_africa.csv
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_americas.csv
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_oceania.csv
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_europe.csv
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_asia.csv
+!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_all.csv
+~~~
+{: .language-python}
+
 ## Use a `for` loop to process files given a list of their names.
 
 *   A filename is just a character string.
