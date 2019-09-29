@@ -16,6 +16,7 @@ keypoints:
 - "Use `DataFrame.T` to transpose a dataframe."
 - "Use `DataFrame.describe` to get summary statistics about data."
 ---
+
 ## Use the Pandas library to do statistics on tabular data.
 
 *   Pandas is a widely-used Python library for statistics, particularly on tabular data.
@@ -26,6 +27,17 @@ keypoints:
 *   Read a Comma Separate Values (CSV) data file with `pd.read_csv`.
     *   Argument is the name of the file to be read.
     *   Assign result to a variable to store the data that was read.
+
+If you are using Google Colab, we will want to grab some data files from the internet.
+
+~~~
+!mkdir -p data
+!wget -P data https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_oceania.csv
+!wget -P data https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_americas.csv
+~~~
+{: .language-python}
+
+Now we load the data file:
 
 ~~~
 import pandas as pd

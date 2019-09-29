@@ -39,7 +39,19 @@ plt.ylabel('Position (km)')
 {: .language-python}
 
 ![Simple Position-Time Plot](../fig/9_simple_position_time_plot.svg)
+
 ## Plot data directly from a [`Pandas dataframe`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html).
+
+If you are using Google Colab, we will want to grab some data files from the internet.
+
+~~~
+!mkdir -p data
+!wget -P data https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_oceania.csv
+!wget -P data https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_europe.csv
+!wget -P data https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_asia.csv
+!wget -P data https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_all.csv
+~~~
+{: .language-python}
 
 *   We can also plot [Pandas dataframes](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html).
 *   This implicitly uses [`matplotlib.pyplot`](https://matplotlib.org/api/pyplot_api.html).

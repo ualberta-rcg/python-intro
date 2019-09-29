@@ -31,6 +31,16 @@ What makes Pandas so attractive is the powerful interface to access individual r
 of the table, proper handling of missing values, and relational-databases operations
 between DataFrames.
 
+If you are using Google Colab, we will want to grab some data files from the internet.
+
+~~~
+!mkdir -p data
+!wget -P data https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_europe.csv
+!wget -P data https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_all.csv
+~~~
+{: .language-python}
+
+
 ## Selecting values
 
 To access a value at the position `[i,j]` of a DataFrame, we have two options, depending on
