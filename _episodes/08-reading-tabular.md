@@ -28,12 +28,27 @@ keypoints:
     *   Argument is the name of the file to be read.
     *   Assign result to a variable to store the data that was read.
 
-If you are using Google Colab, we will want to grab some data files from the internet.
+If you don't have the data files already (e.g., if you are using Google Colab), we can use a download function to get files for this section from the internet.
 
 ~~~
-!mkdir -p data
-!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_oceania.csv
-!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_americas.csv
+# A download function!
+
+import urllib.request
+import os
+
+def download_data(filename):
+  if not os.path.exists('data'):
+          os.mkdir('data')
+  url = 'https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/' + filename
+  output_file = 'data/' + filename
+  urllib.request.urlretrieve(url, output_file)
+  print("Downloaded " + filename + " to the data directory")
+
+filenames = ['gapminder_gdp_oceania.csv',
+             'gapminder_gdp_americas.csv']
+
+for filename in filenames:
+  download_data(filename)
 ~~~
 {: .language-python}
 
