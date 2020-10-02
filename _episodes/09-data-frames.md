@@ -31,12 +31,29 @@ What makes Pandas so attractive is the powerful interface to access individual r
 of the table, proper handling of missing values, and relational-databases operations
 between DataFrames.
 
-If you are using Google Colab, we will want to grab some data files from the internet.
+If you are don't have the data files already (e.g., using Google Colab), we will want to download them from the internet.
 
 ~~~
-!mkdir -p data
-!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_europe.csv
-!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_all.csv
+# Same download function as last time
+
+import urllib.request
+import os
+
+def download_data(filename):
+  if not os.path.exists('data'):
+          os.mkdir('data')
+  url = 'https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/' + filename
+  output_file = 'data/' + filename
+  urllib.request.urlretrieve(url, output_file)
+  print("Downloaded " + filename + " to the data directory")
+
+# Run the function to download
+
+filenames = ['gapminder_gdp_europe.csv',
+             'gapminder_all.csv']
+
+for filename in filenames:
+  download_data(filename)
 ~~~
 {: .language-python}
 
