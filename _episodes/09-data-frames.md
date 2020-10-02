@@ -31,7 +31,7 @@ What makes Pandas so attractive is the powerful interface to access individual r
 of the table, proper handling of missing values, and relational-databases operations
 between DataFrames.
 
-If you are don't have the data files already (e.g., using Google Colab), we will want to download them from the internet.
+If you don't have the data files already (e.g., using Google Colab), you will want to download them.
 
 ~~~
 # Same download function as last time
