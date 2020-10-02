@@ -14,7 +14,7 @@ keypoints:
 - "Use `glob` and `for` to process batches of files."
 ---
 
-If you are don't have the data files already (e.g., using Google Colab), you will want to download them.
+If you don't have the data files already (e.g., using Google Colab), you will want to download them.
 
 ~~~
 # Same download function as last time
