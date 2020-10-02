@@ -14,17 +14,33 @@ keypoints:
 - "Use `glob` and `for` to process batches of files."
 ---
 
-
-If you are using Google Colab, we will want to grab some data files from the internet.
+If you are don't have the data files already (e.g., using Google Colab), you will want to download them.
 
 ~~~
-!mkdir -p data
-!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_africa.csv
-!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_americas.csv
-!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_oceania.csv
-!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_europe.csv
-!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_gdp_asia.csv
-!wget -P data -nc https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/gapminder_all.csv
+# Same download function as last time
+
+import urllib.request
+import os
+
+def download_data(filename):
+  if not os.path.exists('data'):
+          os.mkdir('data')
+  url = 'https://raw.githubusercontent.com/ualberta-rcg/python-intro/gh-pages/data/' + filename
+  output_file = 'data/' + filename
+  urllib.request.urlretrieve(url, output_file)
+  print("Downloaded " + filename + " to the data directory")
+
+# Run the function to download
+
+filenames = ['gapminder_gdp_africa.csv'
+             'gapminder_gdp_americas.csv',
+             'gapminder_gdp_oceania.csv',
+             'gapminder_gdp_europe.csv',
+             'gapminder_gdp_asia.csv',
+             'gapminder_all.csv']
+
+for filename in filenames:
+  download_data(filename)
 ~~~
 {: .language-python}
 
