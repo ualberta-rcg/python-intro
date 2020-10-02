@@ -44,6 +44,8 @@ def download_data(filename):
   urllib.request.urlretrieve(url, output_file)
   print("Downloaded " + filename + " to the data directory")
 
+# Run the function to download files
+
 filenames = ['gapminder_gdp_oceania.csv',
              'gapminder_gdp_americas.csv']
 
