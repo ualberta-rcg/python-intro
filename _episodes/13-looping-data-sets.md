@@ -32,7 +32,7 @@ def download_data(filename):
 
 # Run the function to download
 
-filenames = ['gapminder_gdp_africa.csv'
+filenames = ['gapminder_gdp_africa.csv',
              'gapminder_gdp_americas.csv',
              'gapminder_gdp_oceania.csv',
              'gapminder_gdp_europe.csv',
